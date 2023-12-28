@@ -18,6 +18,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts
+      - name: Enable corepack
+        run: corepack enable
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
