@@ -22,12 +22,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/iron
-      - name: Enable corepack
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install
       - name: Build
-        run: yarn build
+        run: pnpm run build
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,14 +1,24 @@
 {
   "name": "homepage",
-  "packageManager": "yarn@4.0.2",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-source-maps"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "devDependencies": {
-    "parcel": "^2.10.3",
-    "postcss": "^8.4.32",
-    "tailwindcss": "^3.4.0"
-  }
+  "dependencies": {
+    "astro": "^4.4.12",
+    "@astrojs/check": "^0.5.6",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.11.1",
+    "pnpm": ">=8.15.4"
+  },
+  "packageManager": "pnpm@8.15.4"
 }
